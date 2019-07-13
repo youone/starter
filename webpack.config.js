@@ -35,6 +35,18 @@ module.exports = {
                     }
                 }]
             },
+            {
+                test: /\.js$/,
+                loader: "exports-loader",
+                include: [path.resolve(__dirname, 'src/wasm')]
+            },
+            {
+                test: /\.wasm$/,
+                type: "javascript/auto",
+                loader: "file-loader",
+                include: [path.resolve(__dirname, 'src/wasm')]
+            }
+
         ]
     },
     resolve: {
@@ -68,5 +80,7 @@ module.exports = {
         })
     ],
 
-
+    node: {
+        fs: 'empty'
+    }
 };
