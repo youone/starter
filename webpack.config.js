@@ -5,7 +5,7 @@ const webpack = require('webpack');
 module.exports = {
     mode: 'development',
     entry: {
-        main: path.join(__dirname, '/src/index.ts'),
+        main: path.join(__dirname, 'index.ts'),
         longpolling: path.join(__dirname, '/src/pages/longpolling/longpolling.js'),
         wasm: path.join(__dirname, '/src/pages/webassembly/webassembly.js')
     },
@@ -44,7 +44,11 @@ module.exports = {
                 test: /\.wasm$/,
                 type: "javascript/auto",
                 loader: "file-loader",
-                include: [path.resolve(__dirname, 'src/wasm')]
+                include: [
+                    path.resolve(__dirname, 'src/wasm'),
+                    path.resolve(__dirname, 'node_modules/mapping/src/wasm/bin'),
+                    path.resolve(__dirname, '../mapping/src/wasm/bin'),
+                ]
             }
 
         ]
@@ -71,6 +75,7 @@ module.exports = {
             chunks: ['longpolling']
         }),
         new HtmlWebpackPlugin({
+            template: "src/pages/webassembly/wasm.html",
             filename: 'wasm',
             chunks: ['wasm']
         }),
