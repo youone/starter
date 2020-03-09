@@ -22,7 +22,6 @@
     "geolib": "github:youone/geolib",
     "html-webpack-plugin": "^3.2.0",
     "jquery": "^3.4.1",
-    "mapping": "github:youone/mapping",
     "nodemon": "^1.19.1",
     "style-loader": "^0.23.1",
     "svg2ttf": "^4.3.0",

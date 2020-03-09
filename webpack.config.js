@@ -11,7 +11,8 @@ module.exports = {
     },
     output: {
         filename: '[name].bundle.js',
-        path: path.join(__dirname, './dist')
+        path: path.join(__dirname, './dist'),
+        library: 'thelib'
     },
     module: {
         rules: [
@@ -34,11 +35,6 @@ module.exports = {
                         outputPath: 'assets/'
                     }
                 }]
-            },
-            {
-                test: /\.js$/,
-                loader: "exports-loader",
-                include: [path.resolve(__dirname, 'src/wasm')]
             },
             {
                 test: /\.wasm$/,
