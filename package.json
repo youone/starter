@@ -24,7 +24,7 @@
     "jquery": "^3.4.1",
     "nodemon": "^1.19.1",
     "style-loader": "^0.23.1",
-    "svg2ttf": "^4.3.0",
+    "svg2ttf": "^6.0.3",
     "ts-loader": "^6.0.4",
     "typescript": "^3.5.3",
     "webpack": "^4.35.3",
